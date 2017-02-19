@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import { createEpicMiddleware, combineEpics } from 'redux-observable';
+import { createEpicMiddleware } from 'redux-observable';
 import rootEpics from './epics';
 
 import createLogger from 'redux-logger';
@@ -10,7 +10,7 @@ import rootReducer from './reducers';
 const store = createStore(
   rootReducer,
   applyMiddleware(
-    createEpicMiddleware(combineEpics(rootEpics)),
+    createEpicMiddleware(rootEpics),
     createLogger() // Logging
   )
 );

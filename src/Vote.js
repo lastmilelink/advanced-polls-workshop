@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getPoll, addVote } from './actions/poll';
-import { pollId } from './constants/poll';
+import { connect as connectSocket, addVote, getPoll } from './actions/poll';
 
 import Container from './components/Container';
 import Title from './components/Title';
@@ -16,7 +15,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.props.getPoll();
+    this.props.connect();
+    this.props.getPoll('1234');
   }
 
   render() {
@@ -54,8 +54,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getPoll: () => getPoll(),
-  addVote: answerId => addVote(answerId)
+  connect: connectSocket,
+  addVote: answerId => addVote(answerId),
+  getPoll
 }, dispatch)
 
 export default connect(
