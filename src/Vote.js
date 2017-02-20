@@ -9,20 +9,22 @@ import Title from './components/Title';
 import Chart from './components/chart';
 import Voting from './components/Voting';
 
+const POLLID = '1234';
+
 class App extends Component {
   onClick = answerId => {
     this.props.addVote(answerId);
   };
 
   componentDidMount() {
+    this.props.getPoll(POLLID);
     this.props.connect();
-    this.props.getPoll('1234');
   }
 
   render() {
     const { poll } = this.props;
 
-    if (!poll) {
+    if (Object.keys(poll).length <= 0) {
       return (
         <Container>
           <Title>
@@ -55,7 +57,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   connect: connectSocket,
-  addVote: answerId => addVote(answerId),
+  addVote: answerId => addVote(answerId, POLLID),
   getPoll
 }, dispatch)
 

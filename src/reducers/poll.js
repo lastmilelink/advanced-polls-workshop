@@ -1,6 +1,6 @@
 import { SET_POLL } from '../constants/poll';
 
-export default function pollReducer(state = null, action) {
+export default function pollReducer(state = {}, action) {
   const { type, payload } = action;
 
   switch (type) {

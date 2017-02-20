@@ -14,7 +14,8 @@ export const connect = () => ({
   type: CONNECT
 });
 
-export const addVote = (answerId) => ({
+export const addVote = (answerId, pollId) => ({
   type: ADD_VOTE,
-  answerId
+  answerId,
+  pollId
 });
