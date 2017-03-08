@@ -13,16 +13,17 @@ const POLLID = '1234';
 
 class App extends Component {
   onClick = answerId => {
-    this.props.addVote(answerId);
+    // Trigger add vote action
   };
 
   componentDidMount() {
-    this.props.getPoll(POLLID);
-    this.props.connect();
+    // Trigger actions to get the first poll and connect to the websocket endpoint
   }
 
   render() {
     const { poll } = this.props;
+
+    console.log(poll);
 
     if (Object.keys(poll).length <= 0) {
       return (
@@ -53,13 +54,11 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   poll: state.poll
-})
+});
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  connect: connectSocket,
-  addVote: answerId => addVote(answerId, POLLID),
-  getPoll
-}, dispatch)
+const mapDispatchToProps = dispatch => ({
+  // Map the correct action to dispatch here
+});
 
 export default connect(
   mapStateToProps,

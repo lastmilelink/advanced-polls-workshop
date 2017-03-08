@@ -1,47 +1,19 @@
 import { Observable } from 'rxjs';
-import { ADD_VOTE, CONNECT, API_URL, GET_POLL, SOCKET_URL } from '../constants/poll';
-import { setPoll } from '../actions/poll';
 import { combineEpics } from 'redux-observable';
 
-const connectSocket = (action$) => (
-  action$
-    .ofType(CONNECT)
-    .switchMap(() => Observable.webSocket(SOCKET_URL))
-    .map(setPoll)
-);
+const connectSocket = (action$) => {
+  // Listen for a connect action and connect to websocket using rxjs
+  return Observable.empty();
+};
 
-const addVote = (action$) => (
-  action$
-    .ofType(ADD_VOTE)
-    .switchMap(({ answerId, pollId }) =>
-      Observable.ajax({
-        method: 'POST',
-        url: `${API_URL}/poll/vote`,
-        body: {
-          answerId,
-          pollId
-        },
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        }
-      })
-    )
-    .map(({ response }) => setPoll(response))
-);
+const addVote = (action$) => {
+  // POST request to add a vote on the selected Poll / Answer
+  return Observable.empty();
+};
 
-const getPoll = (action$) => (
-  action$
-    .ofType(GET_POLL)
-    .switchMap(({ pollId }) => {
-      return Observable.ajax({
-        method: 'GET',
-        url: `${API_URL}/poll?pollId=${pollId}`
-      });
-    }
-
-    )
-    .map(({ response }) => setPoll(response))
-);
+const getPoll = (action$) => {
+  // Retrieve the poll with ID defined in .env file
+  return Observable.empty();
+};
 
 export default combineEpics(connectSocket, addVote, getPoll);
