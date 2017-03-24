@@ -6,11 +6,11 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import store from './store';
-import Vote from './Vote';
+import App from './components/App';
 
 render(
   <Provider store={store}>
-    <Vote />
+    <App />
   </Provider>,
   document.getElementById('root')
 );
