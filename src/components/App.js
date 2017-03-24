@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { connect as connectSocket, addVote, getPoll } from './actions/poll';
+import { connect as connectSocket, addVote, getPoll } from '../actions/poll';
 
-import Container from './components/Container';
-import Title from './components/Title';
-import Chart from './components/chart';
-import Voting from './components/Voting';
+import Container from './Container';
+import Title from './Title';
+import Chart from './chart';
+import Voting from './Voting';
 
 const POLLID = '1234';
 
