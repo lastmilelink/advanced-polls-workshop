@@ -6,7 +6,7 @@ import { connect as connectSocket, addVote, getPoll } from '../actions/poll';
 
 import Container from './Container';
 import Title from './Title';
-import Chart from './chart';
+import Chart from './Chart';
 import Voting from './Voting';
 
 const POLLID = '1234';
