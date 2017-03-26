@@ -36,14 +36,7 @@ const Item = styled.a`
 const Voting = ({ answers, onClick }) => (
   <Row>
     {
-      answers.map(({ id }, key) => (
-        <Item
-          key={key}
-          onClick={() => onClick(id)}
-        >
-          +1
-        </Item>
-      ))
+      // Add the voting button (Item component) for each answers
     }
   </Row>
 );
