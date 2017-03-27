@@ -1,4 +1,4 @@
-import { SET_POLL, CONNECT, ADD_VOTE, GET_POLL } from '../constants/poll';
+import { SET_POLL, CONNECT, ADD_VOTE, FETCH_POLL } from '../constants/poll';
 
 export const setPoll = (data) => ({
   type: SET_POLL,
@@ -6,7 +6,7 @@ export const setPoll = (data) => ({
 });
 
 export const getPoll = (pollId) => ({
-  type: GET_POLL,
+  type: FETCH_POLL,
   pollId
 });
 

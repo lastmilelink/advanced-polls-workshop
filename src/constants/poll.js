@@ -5,4 +5,4 @@ export const SOCKET_URL = process.env.REACT_APP_SOCKET_URL;
 export const SET_POLL = 'SET_POLL';
 export const CONNECT = 'CONNECT';
 export const ADD_VOTE = 'ADD_VOTE';
-export const GET_POLL = 'GET_POLL';
+export const FETCH_POLL = 'FETCH_POLL';

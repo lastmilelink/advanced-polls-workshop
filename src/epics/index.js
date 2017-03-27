@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { ADD_VOTE, CONNECT, API_URL, GET_POLL, SOCKET_URL } from '../constants/poll';
+import { ADD_VOTE, CONNECT, API_URL, FETCH_POLL, SOCKET_URL } from '../constants/poll';
 import { setPoll } from '../actions/poll';
 import { combineEpics } from 'redux-observable';
 
@@ -32,15 +32,11 @@ const addVote = (action$) => (
 
 const getPoll = (action$) => (
   action$
-    .ofType(GET_POLL)
-    .switchMap(({ pollId }) => {
-      return Observable.ajax({
-        method: 'GET',
-        url: `${API_URL}/poll?pollId=${pollId}`
-      });
-    }
-
-    )
+    .ofType(FETCH_POLL)
+    .switchMap(({ pollId }) => Observable.ajax({
+      method: 'GET',
+      url: `${API_URL}/poll?pollId=${pollId}`
+    }))
     .map(({ response }) => setPoll(response))
 );
 
