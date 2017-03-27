@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { connect as connectSocket, addVote, getPoll } from '../actions/poll';
+import { connect as connectSocket, addVote, fetchPoll } from '../actions/poll';
 
 import Container from './Container';
 import Title from './Title';

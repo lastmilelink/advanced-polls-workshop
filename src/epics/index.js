@@ -11,9 +11,9 @@ const addVote = (action$) => {
   return Observable.empty();
 };
 
-const getPoll = (action$) => {
+const fetchPoll = (action$) => {
   // Retrieve the poll with ID defined in .env file
   return Observable.empty();
 };
 
-export default combineEpics(connectSocket, addVote, getPoll);
+export default combineEpics(connectSocket, addVote, fetchPoll);
