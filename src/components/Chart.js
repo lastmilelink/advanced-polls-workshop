@@ -1,6 +1,5 @@
 import React from 'react';
 import { VictoryBar } from 'victory';
-import Color from 'goethe';
 
 const style = {
   labels: {
