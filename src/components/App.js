@@ -13,11 +13,11 @@ const POLLID = '1234';
 
 class App extends Component {
   onClick = answerId => {
-    // Trigger add vote action
+    //TODO: Trigger add vote action
   };
 
   componentDidMount() {
-    // Trigger actions to get the first poll and connect to the websocket endpoint
+    //TODO: Trigger actions to get the first poll and connect to the websocket endpoint
   }
 
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
           {poll.title}
         </Title>
 
-        <Chart answers={poll.answer}/>
+        <Chart answers={poll.answer} />
 
         <Voting
           answers={poll.answer}
@@ -57,7 +57,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // Map the correct action to dispatch here
+  //TODO: Map the correct action to dispatch here
 });
 
 export default connect(

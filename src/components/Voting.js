@@ -36,7 +36,7 @@ const Item = styled.a`
 const Voting = ({ answers, onClick }) => (
   <Row>
     {
-      // Add the voting button (Item component) for each answers
+      //TODO: Add the voting button (Item component) for each answers
     }
   </Row>
 );
