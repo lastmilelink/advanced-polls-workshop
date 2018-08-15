@@ -18,6 +18,9 @@ All the UI and the configuration bit is already done for you.
 - [Polls API](http://workshop.lastmilelink.technology:8080/)
 - [Redux-observable documentation](https://redux-observable.js.org/docs/basics/Epics.html)
 
+## Stuck?
+
+We left a git branch named `solution` with the completed workshop for you to have a look if really needed
 
 ## Finished?
 - [Try the workshop with ELM](https://github.com/lastmilelink/elm-workshop-voting)
